@@ -1,4 +1,4 @@
-import Home from "./pages/home/Home.js"
+import Home from "./pages/home/Home.jsx"
 //import {Person} from "@mui/icons-material"
 
 function App() {
