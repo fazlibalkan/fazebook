@@ -2,12 +2,10 @@
     flex: 1.5;
     height: calc(100vh - 90px);
     margin: 20px;
-    background-color: thistle;
 }
 
 .sidebarWrapper {
     padding: 20px;
-    
     
 }
 
