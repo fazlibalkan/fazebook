@@ -73,4 +73,6 @@
     background-color:palegreen;
     font-weight: 500;
     margin-right: 20px;
+    cursor: pointer;
+    color: whitesmoke;
 }
