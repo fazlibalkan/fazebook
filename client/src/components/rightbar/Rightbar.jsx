@@ -1,5 +1,7 @@
 import "./rightbar.css"
 import {} from "@mui/icons-material"
+import {Users} from "../../dummyData"
+import Online from "../online/Online.jsx"
 
 export default function Rightbar() {
   return (
@@ -8,22 +10,9 @@ export default function Rightbar() {
         <h4 className="rightbarTitle">Online Friends</h4>
 
         <ul className="rightbarFriendList">
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImageContainer">
-              <img src="assets/person/2.jpeg" alt="" className="rightbarProfileImage" />
-              <span className="rightbarOnline"> </span>
-            </div>
-            <span className="rightbarUsername">Ali Öztürk</span>
-          </li>
-          
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImageContainer">
-              <img src="assets/person/3.jpeg" alt="" className="rightbarProfileImage" />
-              <span className="rightbarOnline"> </span>
-            </div>
-            <span className="rightbarUsername">Ceren Yaman</span>
-          </li>
-
+          {Users.map(u=>(
+            <Online key={u.id} user={u}/>
+          ))}
         </ul>
     </div>
   )
