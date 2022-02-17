@@ -1,18 +1,31 @@
 import "./feed.css"
 import Share from "../share/Share.jsx"
 import Post from "../post/Post.jsx"
-import {Posts} from "../../dummyData"
+import { useEffect, useState } from "react"
+import { LineAxisOutlined } from "@mui/icons-material";
+import axios from "axios";
 
-export default function feed() {
+export default function Feed() {
+  const [posts, setPosts] = useState([]);
+  
+  useEffect(()=> {
+    const fetchPosts = async () => {
+      const res = await axios.get("posts/timeline/62040eaebc99b92512ea9bff");
+      setPosts(res.data);
+    }
+    fetchPosts();
+    
+  }, [])
+
   return (
     <div className="feed">
-        <div className="feedWrapper">
-            <Share/>
-            {Posts.map((p) => (
-              <Post key={p.id} post={p} />
-            ))}
-            
-        </div>
+      <div className="feedWrapper">
+          <Share/>
+          {posts.map((p) => (
+            <Post key={p._id} post={p} />
+          ))}
+          
+      </div>
     </div>
   )
 }
